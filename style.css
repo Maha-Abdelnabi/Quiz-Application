@@ -1,0 +1,34 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*the main container*/
+.quiz-app{
+    margin: 20px auto;
+    width: 800px;
+    background-color: #f8f8f8;
+    padding: 15px;
+}
+/*category and questions count*/
+.quiz-app .quiz-info{
+   display: flex;
+   background-color: #fff;
+   padding: 20px; 
+}
+
+.quiz-app .quiz-info .category{
+    flex: 1;
+    text-align: right;
+}
+/*the question area*/
+.quiz-app .quiz-area{
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 15px;
+}
