@@ -15,54 +15,43 @@
         <div class="category">Category: <span>Javascript</span></div>
         <!--number of qustion-->
         <div class="count">Questions Count: <span>10</span></div>
-        <!--the questions-->
-        <div class="quiz-area">
-          <h2>wrtie question here</h2>
+      </div>
+      <!--the questions-->
+      <div class="quiz-area">
+        <h2>wrtie question here</h2>
+      </div>
+      <!--the answers-->
+      <div class="answers-area">
+        <!--every answer has it's own div-->
+        <div class="answer">
+          <!--answers options-->
+          <input type="radio" id="answer_1" name="questions" />
+          <label for="answer_1">write 1st answer here</label>
         </div>
-        <!--the answers-->
-        <div class="answers-area">
-          <!--every answer has it's own div-->
-          <div class="answer">
-            <!--answers options-->
-            <input type="radio" id="answer_1" name="questions" />
-            <label for="answer_1">write 1st answer here</label>
-          </div>
-          <div class="answer">
-            <input type="radio" id="answer_2" name="questions" />
-            <label for="answer_2">write 2st answer here</label>
-          </div>
-          <div class="answer">
-            <input type="radio" id="answer_3" name="questions" />
-            <label for="answer_3">write 3st answer here</label>
-          </div>
-          <div class="answer">
-            <input type="radio" id="answer_4" name="questions" />
-            <label for="answer_4">write 4st answer here</label>
-          </div>
+        <div class="answer">
+          <input type="radio" id="answer_2" name="questions" />
+          <label for="answer_2">write 2st answer here</label>
         </div>
-        <!--submit answer button-->
-        <button class="submit-button">Submit</button>
-        <!--the bullets for the number of questions-->
-        <div class="bullets">
-            <div class="spans">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <!--countdown include 2 spans..one for the min and the other for the seconds-->
-            <div class="countdown">
-                <span class="minutes">02</span> : <span class="seconds">45</span>
-            </div>
+        <div class="answer">
+          <input type="radio" id="answer_3" name="questions" />
+          <label for="answer_3">write 3st answer here</label>
         </div>
-        <!--shoe the results-->
-<div class="results"></div>
+        <div class="answer">
+          <input type="radio" id="answer_4" name="questions" />
+          <label for="answer_4">write 4st answer here</label>
         </div>
+      </div>
+      <!--submit answer button-->
+      <button class="submit-button">Submit</button>
+
+      <!--showing result-->
+      <div class="results">
+        <span class="correct"> Correct </span>
+      </div>
+
+      <div class="countdown">
+        <!--countdown include 2 spans..one for the min and the other for the seconds-->
+        <span class="minutes">02</span> : <span class="seconds">45</span>
       </div>
     </div>
 

@@ -15,8 +15,9 @@ body{
     background-color: #f8f8f8;
     padding: 15px;
 }
+
 /*category and questions count*/
-.quiz-app .quiz-info{
+.quiz-app > .quiz-info{
    display: flex;
    background-color: #fff;
    padding: 20px; 
@@ -24,11 +25,65 @@ body{
 
 .quiz-app .quiz-info .category{
     flex: 1;
+}
+
+.quiz-app .quiz-info .count{/*move the timer to the right*/
+    flex: 1;
     text-align: right;
 }
 /*the question area*/
+
 .quiz-app .quiz-area{
     background-color: #fff;
     padding: 20px;
     margin-top: 15px;
+}
+.quiz-app .quiz-area h2{
+    margin: 0;
+}
+ /*answers area*/
+ .quiz-app .answers-area{
+    background-color: #fff;
+    padding: 20px;
+ }
+ .quiz-app .answers-area .answer{
+   background-color:#f9f9f9;
+   padding: 15px; 
+ }
+/*adding lines between the answer*/
+ .quiz-app .answers-area .answer:not(:last-child){/*no need under the last answer*/
+    border-bottom: 1px solid #dfdfdf;
+ }
+ .quiz-app .answers-area .answer input{
+    cursor: pointer;
+ }
+ .quiz-app .answers-area .answer label{
+    cursor: pointer;
+    margin-left: 5px;
+ }
+
+ /*button*/
+ .quiz-app .submit-button{
+    background-color: rgb(144, 126, 126);
+    color: #fff;
+    display: block;
+    width: 50%;
+    margin: 20px auto;
+    padding: 10px 15px;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+
+ }
+.quiz-app .submit-button:hover{
+    border: 5px solid #dfdfdf;
+    background-color: #f8f8f8;
+    color: rgb(144, 126, 126);
+}
+.quiz-app .countdown{
+   flex: 1;
+    text-align: right;
+   
 }
