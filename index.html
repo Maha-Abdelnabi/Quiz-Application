@@ -9,41 +9,43 @@
   </head>
   <body>
     <!--the main container-->
-    <div class="quiz-app">
+    <div class="quiz-app" id="quiz-app">
       <div class="quiz-info">
         <!--javascrist is the name of the quiz-->
         <div class="category">Category: <span>Javascript</span></div>
         <!--number of qustion-->
-        <div class="count">Questions Count: <span>5</span></div>
+        <div class="count">Questions Count: <span></span></div>
       </div>
       <!--the questions-->
       <div class="quiz-area">
-        <h2 id="h2">wrtie question here</h2>
-      </div>
+       <h2 id="question">wrtie question here</h2>
+      
       <!--the answers-->
-      <div class="answers-area">
-        <!--every answer has it's own div-->
-        <div class="answer">
-          <!--answers options-->
-          <input type="radio" id="answer_1" name="questions" />
+      <ul >
+    
+       <li >
+         
+          <input type="radio" id="answer_1" name="questions" class="answer" />
           <label for="answer_1" id="answer1">write 1st answer here</label>
-        </div>
-        <div class="answer">
-          <input type="radio" id="answer_2" name="questions" />
+       </li>
+        <li >
+          <input type="radio" id="answer_2" name="questions" class="answer"/>
           <label for="answer_2" id="answer2">write 2st answer here</label>
-        </div>
-        <div class="answer">
-          <input type="radio" id="answer_3" name="questions" />
+        </li>
+        <li >
+          <input type="radio" id="answer_3" name="questions" class="answer"/>
           <label for="answer_3" id="answer3">write 3st answer here</label>
-        </div>
-        <div class="answer">
-          <input type="radio" id="answer_4" name="questions" />
+        </li>
+        <li>
+          <input type="radio" id="answer_4" name="questions"class="answer" />
           <label for="answer_4" id="answer4">write 4st answer here</label>
-        </div>
+        </li>
+      </div>
       </div>
       <!--submit answer button-->
       <button class="submit-button">Submit</button>
-
+      
+       <div class="spans"></div>
       <!--showing result-->
       <div class="results">
         <span class="correct"> Correct </span>
@@ -56,6 +58,7 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="sheet.js"></script>
+    <script src="example.js"></script>
   </body>
 </html>
+
