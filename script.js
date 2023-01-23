@@ -1,4 +1,4 @@
-let theQuestions = [
+var theQuestions = [
   {
     //first question
     question: (document.getElementById("question").innerHTML =
@@ -56,19 +56,15 @@ let theQuestions = [
   {
     //forth question
     question: (document.getElementById("question").innerHTML =
-      "How do you write 'Hello World' in an alert box?"),
+      "How to write an IF statement for executing some code if 'i' is not equal to five?"),
 
-    Text1: (document.getElementById("answer1").textContent =
-      "msg('Hello World');"),
+    Text1: (document.getElementById("answer1").textContent = "if (i <> 5)"),
 
-    Text2: (document.getElementById("answer2").textContent =
-      "msgBox('Hello World');"),
+    Text2: (document.getElementById("answer2").textContent = "if (i != 5)"),
 
-    Text3: (document.getElementById("answer3").textContent =
-      "<alertBox('Hello World');"),
+    Text3: (document.getElementById("answer3").textContent = "if i <> 5"),
 
-    Text4: (document.getElementById("answer4").textContent =
-      "alert('Hello World');"),
+    Text4: (document.getElementById("answer4").textContent = "if i =! 5 then"),
 
     correct: "Text4",
   },
@@ -110,9 +106,22 @@ var answer_3 = document.getElementById("answer3");
 var answer_4 = document.getElementById("answer4");
 //button
 var submitButton = document.querySelector(".submit-button");
+var countDownEl = document.querySelector(".countdown");
 
-let currentQuiz = 0;
-let score = 0;
+const startingMinutes = 2;
+var time = startingMinutes * 60;
+
+setInterval(updateCountdown, 1000);
+function updateCountdown() {
+  const minutes = Math.floor(time / 60);
+  var seconds = time % 60;
+  countDownEl.innerHTML = `${minutes}:${seconds}`;
+  time--;
+}
+
+var currentQuiz = 0;
+var score = 0;
+let countDownInterval;
 
 loadQuiz();
 
@@ -135,7 +144,7 @@ function deselectAnswers() {
 }
 
 function getSelected() {
-  let answer;
+  var answer;
   answerArea.forEach((answerEl) => {
     if (answerEl.checked) {
       answer = answerEl.id;
@@ -148,7 +157,7 @@ submitButton.addEventListener("click", () => {
   const answer = getSelected();
   if (answer) {
     if (answer === theQuestions[currentQuiz].correct) {
-      score++;
+   score++;
     }
     currentQuiz++;
 
@@ -156,9 +165,9 @@ submitButton.addEventListener("click", () => {
       loadQuiz();
     } else {
       quizApp.innerHTML = `<h2> you answer ${score}/ ${theQuestions.length} quesions correctly </h2>
-  
-  <button onclick = "location.relaoad()">reload</button>
   `;
     }
   }
 });
+
+
