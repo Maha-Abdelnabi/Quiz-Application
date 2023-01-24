@@ -1,95 +1,94 @@
 var theQuestions = [
   {
     //first question
-    question: (document.getElementById("question").innerHTML =
-      "Inside which HTML element do you put the JavaScript?"),
+    question:
+      "Inside which HTML element do you put the JavaScript?",
 
-    Text1: (document.getElementById("answer1").textContent = "<js>"),
+    Text1:  "<js>",
 
-    Text2: (document.getElementById("answer2").textContent = "<script>"),
+    Text2:  "<script>",
 
-    Text3: (document.getElementById("answer3").textContent = "<javascript>"),
+    Text3:  "<javascript>",
 
-    Text4: (document.getElementById("answer4").textContent = "<scripting>"),
+    Text4:  "<scripting>",
 
-    correct: "Text2",
+    correct: "answer_2",//the input id which matches the label for
   },
 
   {
     //second question
-    question: (document.getElementById("question").innerHTML =
-      "Where is the correct place to insert JavaScript?"),
+    question:
+      "Where is the correct place to insert JavaScript?",
 
-    Text1: (document.getElementById("answer1").textContent =
-      "The <body> section"),
+    Text1: 
+      "The <body> section",
 
-    Text2: (document.getElementById("answer2").textContent =
-      "The <head> section"),
+    Text2: 
+      "The <head> section",
 
-    Text3: (document.getElementById("answer3").textContent =
-      "Both the <head> section, and the <body> section"),
+    Text3: 
+      "Both the <head> section, and the <body> section",
 
-    Text4: (document.getElementById("answer4").textContent =
-      "None of the answers are true"),
+    Text4: 
+      "None of the answers are true",
 
-    correct: "Text1",
+    correct: "answer_1",
   },
   {
     //third question
-    question: (document.getElementById("question").innerHTML =
-      "How do you write 'Hello World' in an alert box?"),
+    question:
+      "How do you write 'Hello World' in an alert box?",
 
-    Text1: (document.getElementById("answer1").textContent =
-      "msg('Hello World');"),
+    Text1: 
+      "msg('Hello World');",
 
-    Text2: (document.getElementById("answer2").textContent =
-      "msgBox('Hello World');"),
+    Text2: 
+      "msgBox('Hello World');",
 
-    Text3: (document.getElementById("answer3").textContent =
-      "<alertBox('Hello World');"),
+    Text3: 
+      "<alertBox('Hello World');",
 
-    Text4: (document.getElementById("answer4").textContent =
-      "alert('Hello World');"),
+    Text4: 
+      "alert('Hello World');",
 
-    correct: "Text4",
+    correct: "answer_4",
   },
   {
     //forth question
-    question: (document.getElementById("question").innerHTML =
-      "How to write an IF statement for executing some code if 'i' is not equal to five?"),
+    question:
+      "How to write an IF statement for executing some code if 'i' is not equal to five?",
 
-    Text1: (document.getElementById("answer1").textContent = "if (i <> 5)"),
+    Text1:  "if (i <> 5)",
 
-    Text2: (document.getElementById("answer2").textContent = "if (i != 5)"),
+    Text2:  "if (i != 5)",
 
-    Text3: (document.getElementById("answer3").textContent = "if i <> 5"),
+    Text3:  "if i <> 5",
 
-    Text4: (document.getElementById("answer4").textContent = "if i =! 5 then"),
+    Text4:  "if i =! 5 then",
 
-    correct: "Text4",
+    correct: "answer_2",
   },
 
   {
     //fifth question
-    question: (document.getElementById("question").innerHTML =
-      "How do you create a function in JavaScript?"),
+    question:
+      "How do you create a function in JavaScript?",
 
-    Text1: (document.getElementById("answer1").textContent =
-      "function = myFunction()"),
+    Text1: 
+      "function = myFunction()",
 
-    Text2: (document.getElementById("answer2").textContent =
-      "function:myFunction()"),
+    Text2: 
+      "function:myFunction()",
 
-    Text3: (document.getElementById("answer3").textContent =
-      "function myFunction()"),
+    Text3: 
+      "function myFunction()",
 
-    Text4: (document.getElementById("answer4").textContent =
-      "{function = myFunction()}"),
+    Text4: 
+      "{function = myFunction()}",
 
-    correct: "Text3",
+    correct: "answer_3",
   },
 ];
-
 
 //select elements
 var quizApp = document.getElementById("quiz-app");
@@ -104,32 +103,39 @@ var answer_1 = document.getElementById("answer1");
 var answer_2 = document.getElementById("answer2");
 var answer_3 = document.getElementById("answer3");
 var answer_4 = document.getElementById("answer4");
+
 //button
 var submitButton = document.querySelector(".submit-button");
 var countDownEl = document.querySelector(".countdown");
 
-const startingMinutes = 2;
-var time = startingMinutes * 60;
+//countdown timer
+const startingMinutes = 1;
+var time = startingMinutes * 60;// getting all the seconds
 
 setInterval(updateCountdown, 1000);
+//function that run every second
 function updateCountdown() {
-  const minutes = Math.floor(time / 60);
+  const minutes = Math.floor(time / 60); //math.floor to retrieve the number without a decimal
   var seconds = time % 60;
   countDownEl.innerHTML = `${minutes}:${seconds}`;
+  //let time = 0.25 * 60; //minutes * 60 seconds
+ // let refreshIntervalId = setInterval(updateCountdown, 1000); //update every 1 second
   time--;
 }
 
 var currentQuiz = 0;
 var score = 0;
-let countDownInterval;
 
-loadQuiz();
+loadQuiz(); //the main funtion
 
 function loadQuiz() {
-  deselectAnswers();
-  //enter to each index of an question array
+  deselectAnswers(); //this function to remove the answer from the pervios quiz  (Default answer),and prepare it for the next quiz
+
   const currentQuizData = theQuestions[currentQuiz];
 
+  //These attributes make it easy to change a DOM element’s text and its HTML code
+
+  // preper the nex QuizData
   questionEl.innerText = currentQuizData.question;
   answer_1.innerText = currentQuizData.Text1;
   answer_2.innerText = currentQuizData.Text2;
@@ -137,31 +143,35 @@ function loadQuiz() {
   answer_4.innerText = currentQuizData.Text4;
 }
 
-function deselectAnswers() {
-   answerArea.forEach(function (answerEl) {
-     if ((answerEl.checked = false)) return answerEl;
-   });
+function deselectAnswers() {//if i don't run this function,the answer from the previous question will stay the same for the next answer
+  //enter to each index of an question array
+  answerArea.forEach(function (answerEl) {
+    if ((answerEl.checked = false)) return answerEl;
+  });
 }
 
 function getSelected() {
   var answer;
   answerArea.forEach((answerEl) => {
     if (answerEl.checked) {
-      answer = answerEl.id;
+      answer = answerEl.id;//.id returns to the element that matches the id, which means each answer id
     }
   });
   return answer;
 }
-
+//the button function
 submitButton.addEventListener("click", () => {
   const answer = getSelected();
   if (answer) {
     if (answer === theQuestions[currentQuiz].correct) {
-   score++;
+      score++;
     }
+
+    
+
     currentQuiz++;
 
-    if (currentQuiz < theQuestions.length) {
+    if (currentQuiz < theQuestions.length) {//to stop the quiz
       loadQuiz();
     } else {
       quizApp.innerHTML = `<h2> you answer ${score}/ ${theQuestions.length} quesions correctly </h2>
@@ -169,5 +179,3 @@ submitButton.addEventListener("click", () => {
     }
   }
 });
-
-
