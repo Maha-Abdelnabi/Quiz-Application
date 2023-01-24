@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
+    <div id="home-page">
+        <h2>Javascript quiz</h2>
+
+<p>It's a simple and quick quiz to test your information in JS</p>
+<p>Enter your initials <label for="fname"></label><br>
+<input type="text" id="fname" name="fname"><br>then press on start button</p>
+
+
+<button onclick="myFunction()">START</button>
+
+<p id="demo"></p>
+    </div>
     <!--the main container-->
     <div class="quiz-app" id="quiz-app">
       <div class="quiz-info">
@@ -20,7 +33,7 @@
       </div>
       </div>
       <!--the questions-->
-      <div class="quiz-area">
+      <div id="questions-page" class="quiz-area hide">
        <h2 id="question">wrtie question here</h2>
       
       <!--the answers-->
@@ -43,16 +56,16 @@
           <input type="radio" id="answer_4" name="questions"class="answer" />
           <label for="answer_4" id="answer4">write 4st answer here</label>
         </li>
+        <button class="submit-button">Submit</button>
+        
+         <div class="spans"></div>
+        <!--showing result-->
+        <div class="results">
+          <span class="correct"> Correct </span>
+        </div>
       </div>
       </div>
       <!--submit answer button-->
-      <button class="submit-button">Submit</button>
-      
-       <div class="spans"></div>
-      <!--showing result-->
-      <div class="results">
-        <span class="correct"> Correct </span>
-      </div>
 
      
     </div>
