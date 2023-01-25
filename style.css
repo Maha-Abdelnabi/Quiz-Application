@@ -7,8 +7,39 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+/*js title first pg*/
+.home-title{
+    display: block;
+    text-align: center;
+    color:rgb(144, 126, 126) ;
+    font-size: 40px;
+    margin: 50px;
+}
+/*the info about the quiz*/
+.paragraph{
+    text-align: center;
+    font-size: 25px;
+    padding: 10px;
+ 
+}
+/*initials input*/
+#fname{
+    width: 100px;
+height: 50px;
+margin: 20px;
+color: rgb(0, 92, 200);
+font-size: 25px;
+}
+/*the clss to show the first pg*/
+.show {
+    display: block;
+}
+/*clss to hide any thing else except the first pg*/
+.hide {
+    display: none;
+}
 
-/*the main container*/
+/*the main container of questions*/
 .quiz-app{
     margin: 20px auto;
     width: 800px;
@@ -22,16 +53,13 @@ body{
    background-color: #fff;
    padding: 20px; 
 }
-
+/*js category*/
  .category{
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-.quiz-app .quiz-info .count{/*move the timer to the right*/
-    flex: 1;
-    text-align: right;
-}
+
 /*the question area*/
 
 .quiz-app .quiz-area{
@@ -39,6 +67,7 @@ body{
     padding: 20px;
     margin-top: 15px;
 }
+/*the qustion section*/
  .quiz-area h2{
     margin-bottom: 20px;
     font-weight: 100;
@@ -52,32 +81,33 @@ body{
     border-top: 1px solid #dfdfdf;
     
  }
-
+/*padding and margin for each answer*/
  .answer{
-   background-color:#f9f9f9;
+ 
    padding: 15px; 
-   margin: 10px;
-   
-  
+   margin: 10px;  
    
  }
-/*adding lines between the answer*/
  
 
- 
+ /*the radio input*/
  input{
     cursor: pointer;
  }
+ /*the answers*/
 label{
     cursor: pointer;
     margin-left: 15px;
+    font-size: 20px;
+
  
  }
+ /*hover over the answers*/
 label:hover{
     color: rgb(0, 92, 200);
 }
- /*button*/
-  .submit-button{
+ /* submit and start button*/
+  .submit-button, #start-btn{
     background-color: rgb(144, 126, 126);
     color: #fff;
     display: block;
@@ -91,65 +121,20 @@ label:hover{
     border-radius: 8px;
 
  }
-.submit-button:hover{
+/*hover over the buttons*/
+.submit-button:hover, #start-btn:hover{
     border: 5px solid #dfdfdf;
     background-color: #f8f8f8;
     color: rgb(144, 126, 126);
 }
-.countdown{
 
+
+/*timer*/
+.countdown{
    text-align: right;
-   
     font-size: 25px;
     color: rgb(144, 126, 126);  
 }
 
 
     
-.home-title{
-    display: block;
-    text-align: center;
-    color:rgb(144, 126, 126) ;
-    font-size: 40px;
-    margin: 50px;
-}
-.paragraph{
-    text-align: center;
-    font-size: 25px;
-    padding: 10px;
- 
-}
-#fname{
-    width: 100px;
-height: 50px;
-margin: 20px;
-color: rgb(0, 92, 200);
-font-size: 25px;
-}
-
-#start-btn{
-     background-color: rgb(144, 126, 126);
-    color: #fff;
-    display: block;
-    width: 50%;
-    margin: 20px auto;
-    padding: 10px 15px;
-    border: none;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 8px;
-
-}
-#start-btn:hover{
-    border: 5px solid #dfdfdf;
-    background-color: #f8f8f8;
-    color: rgb(144, 126, 126);
-}
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}

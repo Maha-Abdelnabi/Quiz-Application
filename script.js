@@ -1,15 +1,16 @@
+//first starting page
 var homePage = document.getElementById("home-page");
 var questionsPage = document.getElementById("questions-page");
 
-function myFunction() {
-    homePage.classList.add("hide");
+function myFunction() { //the onclick func
+    homePage.classList.add("hide"); //hide all the element on the page,and only show the elements that got selected
     questionsPage.classList.remove("hide");
     questionsPage.classList.add("show");
-  var fname = document.getElementById("fname");
-  var name = fname.value;
-  document.getElementById("demo").innerHTML = `hello ${name}`;
-}
+  var fname = document.getElementById("fname");//the initials
+  
 
+}
+//the questions
 var theQuestions = [
   {
     //first question
@@ -86,7 +87,7 @@ var theQuestions = [
   },
 ];
 
-//select elements
+//select DOM elements
 var quizApp = document.getElementById("quiz-app");
 var quizArea = document.querySelector(".quiz-area");
 //h2 question
@@ -102,13 +103,15 @@ var answer_4 = document.getElementById("answer4");
 
 //button
 var submitButton = document.querySelector(".submit-button");
+//timer
 var countDownEl = document.querySelector(".countdown");
 
+
+//var for the questions functions
 var currentQuiz = 0;
 var score = 0;
 
-loadQuiz(); //the main funtion
-
+//the main funtion
 function loadQuiz() {
   deselectAnswers(); //this function to remove the answer from the pervios quiz  (Default answer),and prepare it for the next quiz
 
@@ -116,7 +119,7 @@ function loadQuiz() {
 
   //These attributes make it easy to change a DOM element’s text and its HTML code
 
-  // preper the nex QuizData
+  // preper the next QuizData,,enter each question and answers to their places in html
   questionEl.innerText = currentQuizData.question;
   answer_1.innerText = currentQuizData.Text1;
   answer_2.innerText = currentQuizData.Text2;
@@ -126,61 +129,63 @@ function loadQuiz() {
 
 function deselectAnswers() {
   //if i don't run this function,the answer from the previous question will stay the same for the next answer
-  //enter to each index of an question array
+  //enter to each index of an question array,,and detect if it false
   answerArea.forEach(function (answerEl) {
     if ((answerEl.checked = false)) return answerEl;
   });
 }
-
+//the selested answers..matches the checked answer to the id
 function getSelected() {
   var answer;
   answerArea.forEach((answerEl) => {
     if (answerEl.checked) {
-      answer = answerEl.id; //.id returns to the element that matches the id, which means each answer id
+      answer = answerEl.id; //.id returns to the element that matches the id
     }
   });
   return answer;
 }
 //the button function
 submitButton.addEventListener("click", () => {
-  const answer = getSelected();
+  const answer = getSelected();//if the answer that selected matches the correct one ,,the score will add 1
   if (answer) {
     if (answer === theQuestions[currentQuiz].correct) {
       score++;
     }
 
-    currentQuiz++;
+    currentQuiz++; //go to next question
 
+    //to stop the quiz
     if (currentQuiz < theQuestions.length) {
-      //to stop the quiz
+     
       loadQuiz();
+      //last page
     } else {
       quizApp.innerHTML = `<h2>${fname.value}, you score is ${score}/ ${theQuestions.length}  correct </h2>
   `;
     }
   }
 });
+loadQuiz(); 
 
 //countdown timer
-var startingMinutes = 1;
+var startingMinutes = 3;
 var time = startingMinutes * 60; // getting all the seconds
-
-var intEl= setInterval(updateCountdown, 1000);
 //function that run every second
+var intEl= setInterval(updateCountdown, 1000);
+
 function updateCountdown() {
   var minutes = Math.floor(time / 60); //math.floor to retrieve the number without a decimal
   var seconds = time % 60;
-  var currentTime = `${minutes}.${seconds}`;
-  //countDownEl.innerHTML = currentTime;
+  var currentTime = `${minutes}.${seconds}`;//it's a float num
+
 
   console.log(parseFloat(currentTime));
-  //let time = 0.25 * 60; //minutes * 60 seconds
-  // let refreshIntervalId = setInterval(updateCountdown, 1000); //update every 1 second
-  time--;
+  time--;// minus every second
   countDownEl.innerHTML = currentTime;
+  //to stop the timer at zero
   if (parseFloat(currentTime) <= 0.01) {
     countDownEl.innerHTML = 0;
-    clearInterval(intEl);
+    clearInterval(intEl);//to stop the timer at the consol at zero
   }
-  //countDownEl.innerHTML = currentTime;
+
 }

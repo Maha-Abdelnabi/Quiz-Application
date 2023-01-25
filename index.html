@@ -8,71 +8,60 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
+    <!--starting page-->
     <div id="home-page">
-        <h2 class="home-title">Javascript quiz</h2>
-<div class="paragraph">
+      <h2 class="home-title">Javascript quiz</h2>
+      <div class="paragraph">
         <p>It's a simple and quick quiz to test your information in JS</p>
-        <p>Please,Enter your initials <label for="fname"></label><br>
-      <input type="text" id="fname" name="fname"><br>then press on start button</p>
-</div>
-
-       <button id="start-btn" onclick="myFunction()">START</button>
-
-        <p id="demo"></p>
+        <p>
+          Please,Enter your initials <label for="fname"></label
+          ><br /><!--the input text where should the user enter the initials-->
+          <input type="text" id="fname" name="fname" /><br />then press on start
+          button
+        </p>
+      </div>
+      <!--start button-->
+      <button id="start-btn" onclick="myFunction()">START</button><!--adding onclick allows to excute func when an element gets clicked-->
     </div>
+
     <!--the main container-->
     <div class="quiz-app" id="quiz-app">
-        <!--the questions-->
-        <div id="questions-page" class="quiz-area hide">
-
-
-            <div class="quiz-info">
-              <!--javascrist is the name of the quiz-->
-              <div class="countdown"></div>
-              <div class="category">Category: <span>Javascript</span></div>
-              <!--number of qustion-->
-            </div>
-            
-
-       <h2 id="question">wrtie question here</h2>
-      
-      <!--the answers-->
-      <ul >
-    
-       <li >
-         
-          <input type="radio" id="answer_1" name="questions" class="answer" />
-          <label for="answer_1" id="answer1">write 1st answer here</label>
-       </li>
-        <li >
-          <input type="radio" id="answer_2" name="questions" class="answer"/>
-          <label for="answer_2" id="answer2">write 2st answer here</label>
-        </li>
-        <li >
-          <input type="radio" id="answer_3" name="questions" class="answer"/>
-          <label for="answer_3" id="answer3">write 3st answer here</label>
-        </li>
-        <li>
-          <input type="radio" id="answer_4" name="questions"class="answer" />
-          <label for="answer_4" id="answer4">write 4st answer here</label>
-        </li>
-        <button class="submit-button">Submit</button>
-        
-         <div class="spans"></div>
-        <!--showing result-->
-        <div class="results">
-          <span class="correct"> Correct </span>
+      <!--the questions-->
+      <div id="questions-page" class="quiz-area hide">
+        <div class="quiz-info">
+          <!--countdown-->
+          <div class="countdown"></div>
+          <!--javascrist is the name of the quiz-->
+          <div class="category">Category: <span>Javascript</span></div>
         </div>
-   
-      
-      <!--submit answer button-->
 
-     
-   
+        <!--the question will be shown here-->
+        <h2 id="question">wrtie question here</h2>
+
+        <!--the list of answers-->
+        <ul>
+          <li>
+            <input type="radio" id="answer_1" name="questions" class="answer" />
+            <label for="answer_1" id="answer1">write 1st answer here</label>
+          </li>
+          <li>
+            <input type="radio" id="answer_2" name="questions" class="answer" />
+            <label for="answer_2" id="answer2">write 2st answer here</label>
+          </li>
+          <li>
+            <input type="radio" id="answer_3" name="questions" class="answer" />
+            <label for="answer_3" id="answer3">write 3st answer here</label>
+          </li>
+          <li>
+            <input type="radio" id="answer_4" name="questions" class="answer" />
+            <label for="answer_4" id="answer4">write 4st answer here</label>
+          </li>
+        </ul>
+        <!--submit answer button-->
+        <button class="submit-button">Submit</button>
+      </div>
+    </div>
 
     <script src="script.js"></script>
-   
   </body>
 </html>
-
