@@ -2,13 +2,12 @@
 var homePage = document.getElementById("home-page");
 var questionsPage = document.getElementById("questions-page");
 
-function myFunction() { //the onclick func
-    homePage.classList.add("hide"); //hide all the element on the page,and only show the elements that got selected
-    questionsPage.classList.remove("hide");
-    questionsPage.classList.add("show");
-  var fname = document.getElementById("fname");//the initials
-  
-
+function myFunction() {
+  //the onclick func
+  homePage.classList.add("hide"); //hide all the element on the page,and only show the elements that got selected
+  questionsPage.classList.remove("hide");
+  questionsPage.classList.add("show");
+  var fname = document.getElementById("fname"); //the initials
 }
 //the questions
 var theQuestions = [
@@ -106,10 +105,10 @@ var submitButton = document.querySelector(".submit-button");
 //timer
 var countDownEl = document.querySelector(".countdown");
 
-
 //var for the questions functions
 var currentQuiz = 0;
 var score = 0;
+
 
 //the main funtion
 function loadQuiz() {
@@ -146,46 +145,49 @@ function getSelected() {
 }
 //the button function
 submitButton.addEventListener("click", () => {
-  const answer = getSelected();//if the answer that selected matches the correct one ,,the score will add 1
+  const answer = getSelected(); //if the answer that selected matches the correct one ,,the score will add 1
   if (answer) {
     if (answer === theQuestions[currentQuiz].correct) {
       score++;
+    } else {
+      time = time - 15;// takes out 15 seconds on each wrong answer
     }
 
     currentQuiz++; //go to next question
 
     //to stop the quiz
-    if (currentQuiz < theQuestions.length) {
-     
+    if (currentQuiz < theQuestions.length && time > 0) {
       loadQuiz();
       //last page
-    } else {
-      quizApp.innerHTML = `<h2>${fname.value}, you score is ${score}/ ${theQuestions.length}  correct </h2>
-  `;
+    } else {//game is over
+      quizApp.innerHTML = `<h2>${fname.value}, you score is ${score}/ ${theQuestions.length}  correct </h2>`;
     }
   }
 });
-loadQuiz(); 
+loadQuiz();
+
 
 //countdown timer
-var startingMinutes = 5;
+var startingMinutes = 3;
 var time = startingMinutes * 60; // getting all the seconds
 //function that run every second
-var intEl= setInterval(updateCountdown, 1000);
+var intEl = setInterval(updateCountdown, 1000);
 
 function updateCountdown() {
   var minutes = Math.floor(time / 60); //math.floor to retrieve the number without a decimal
   var seconds = time % 60;
-  var currentTime = `${minutes}.${seconds}`;//it's a float num
+  var currentTime = `${minutes}.${seconds}`; //it's a float num
 
-
-  console.log(parseFloat(currentTime));
-  time--;// minus every second
+ // console.log(parseFloat(currentTime));
+  time--; // minus every second
   countDownEl.innerHTML = currentTime;
   //to stop the timer at zero
   if (parseFloat(currentTime) <= 0.01) {
     countDownEl.innerHTML = 0;
-    clearInterval(intEl);//to stop the timer at the consol at zero
+    clearInterval(intEl); //to stop the timer at the consol at zero
   }
-
+//game is over
+  if (time === 0) {
+    quizApp.innerHTML = `<h2>${fname.value}, you score is ${score}/ ${theQuestions.length}  correct </h2>`;
+  }
 }

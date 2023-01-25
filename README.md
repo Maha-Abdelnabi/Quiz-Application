@@ -15,11 +15,17 @@ This app will run in the browser and will feature dynamically updated HTML and C
 ## Usage
 WHEN  click the start button
 THEN  timer starts and presented with a question
+
 WHEN  answer a question
 THEN  presented with another question
-WHEN all questions are answered 
+
+WHEN  answer a question incorrectly
+THEN time is subtracted from the clock
+
+WHEN all questions are answered or the timer reaches 0
 THEN the game is over
+
 WHEN the game is over
-THEN  save my initials and my score
+THEN I can save my initials and my score
 
 ![screen shot of the project](./assets/quiz%20shot.PNG)
