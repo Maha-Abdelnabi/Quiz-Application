@@ -155,7 +155,7 @@ submitButton.addEventListener("click", () => {
       //to stop the quiz
       loadQuiz();
     } else {
-      quizApp.innerHTML = `<h2>${fname.value}, you score is ${score}/ ${theQuestions.length} quesions correctly </h2>
+      quizApp.innerHTML = `<h2>${fname.value}, you score is ${score}/ ${theQuestions.length}  correct </h2>
   `;
     }
   }
@@ -165,7 +165,7 @@ submitButton.addEventListener("click", () => {
 var startingMinutes = 1;
 var time = startingMinutes * 60; // getting all the seconds
 
-var intEl= setInterval(updateCountdown, 300);
+var intEl= setInterval(updateCountdown, 1000);
 //function that run every second
 function updateCountdown() {
   var minutes = Math.floor(time / 60); //math.floor to retrieve the number without a decimal

@@ -8,32 +8,33 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
+
     <div id="home-page">
-        <h2>Javascript quiz</h2>
+        <h2 class="home-title">Javascript quiz</h2>
+<div class="paragraph">
+        <p>It's a simple and quick quiz to test your information in JS</p>
+        <p>Please,Enter your initials <label for="fname"></label><br>
+      <input type="text" id="fname" name="fname"><br>then press on start button</p>
+</div>
 
-<p>It's a simple and quick quiz to test your information in JS</p>
-<p>Enter your initials <label for="fname"></label><br>
-<input type="text" id="fname" name="fname"><br>then press on start button</p>
+       <button id="start-btn" onclick="myFunction()">START</button>
 
-
-<button onclick="myFunction()">START</button>
-
-<p id="demo"></p>
+        <p id="demo"></p>
     </div>
     <!--the main container-->
     <div class="quiz-app" id="quiz-app">
-      <div class="quiz-info">
-        <!--javascrist is the name of the quiz-->
-        <div class="category">Category: <span>Javascript</span></div>
-        <!--number of qustion-->
-        <div class="countdown">
-        <!--countdown include 2 spans..one for the min and the other for the seconds-->
-        
-      </div>
-      </div>
-      <!--the questions-->
-      <div id="questions-page" class="quiz-area hide">
+        <!--the questions-->
+        <div id="questions-page" class="quiz-area hide">
+
+
+            <div class="quiz-info">
+              <!--javascrist is the name of the quiz-->
+              <div class="countdown"></div>
+              <div class="category">Category: <span>Javascript</span></div>
+              <!--number of qustion-->
+            </div>
+            
+
        <h2 id="question">wrtie question here</h2>
       
       <!--the answers-->
@@ -63,15 +64,15 @@
         <div class="results">
           <span class="correct"> Correct </span>
         </div>
-      </div>
-      </div>
+   
+      
       <!--submit answer button-->
 
      
-    </div>
+   
 
     <script src="script.js"></script>
-    <!--<script src="example.js"></script>-->
+   
   </body>
 </html>
 
