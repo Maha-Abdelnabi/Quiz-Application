@@ -168,7 +168,7 @@ submitButton.addEventListener("click", () => {
 loadQuiz(); 
 
 //countdown timer
-var startingMinutes = 3;
+var startingMinutes = 5;
 var time = startingMinutes * 60; // getting all the seconds
 //function that run every second
 var intEl= setInterval(updateCountdown, 1000);
